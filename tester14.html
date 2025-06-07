@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>State and City Selector</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+  <div class="sidebar">
+      <h2>Saved Trips</h2>
+      <div id="myTripsList">
+          <ul id="savedTrips"></ul>
+      </div>
+  </div>
+
+
+  <div class="main-content">
+      <h1>RoadTripper</h1>
+
+
+      <!-- Starter Location Input -->
+      <label>Starting City: </label>
+      <input type="text" placeholder="Los Angeles" id="StartingCity">
+
+
+      <label>Starting State: </label>
+      <input type="text" placeholder="California" id="StartingState"><br><br>
+
+
+      <!-- Destination Location Input -->
+      <label>Destination City: </label>
+      <input type="text" placeholder="New York City" id="DestinationCity">
+
+
+      <label>Destination State: </label>
+      <input type="text" placeholder="New York" id="DestinationState"><br><br>
+
+
+      <!-- Option to Add Waypoints -->
+      <label for="WaypointCheckbox">Add Waypoint Locations</label>
+      <input type="checkbox" id="WaypointCheckbox"> <br><br>
+
+
+      <!-- Waypoint Locations Input (hidden initially) -->
+      <div class="waypointLocation" id="WaypointLocation1">
+          <label>Waypoint 1 City: </label>
+          <input type="text" placeholder="Chicago" id="WaypointCity1">
+
+
+          <label>Waypoint 1 State: </label>
+          <input type="text" placeholder="Illinois" id="WaypointState1"><br><br>
+      </div>
+      <div class="waypointLocation" id="WaypointLocation2">
+          <label>Waypoint 2 City: </label>
+          <input type="text" placeholder="Denver" id="WaypointCity2">
+
+
+          <label>Waypoint 2 State: </label>
+          <input type="text" placeholder="Colorado" id="WaypointState2"><br><br>
+      </div>
+      <div class="waypointLocation" id="WaypointLocation3">
+          <label>Waypoint 3 City: </label>
+          <input type="text" placeholder="Atlanta" id="WaypointCity3">
+
+
+          <label>Waypoint 3 State: </label>
+          <input type="text" placeholder="Georgia" id="WaypointState3"><br><br>
+      </div>
+
+
+      <button type="submit" id="submit">Submit</button>
+
+
+      <!-- Section to display submitted location -->
+      <div id="locationDisplay">
+          <h2>Submitted Locations:</h2>
+          <p id="startingLocationText"></p> <!-- To display starter location -->
+          <p id="destinationLocationText"></p> <!-- To display destination location -->
+          <p id="WaypointLocationText"></p> <!-- To display Waypoint locations if provided -->
+          <p id="distanceInfo"></p> <!-- To display distance and travel time info -->
+      </div>
+
+
+      <!-- Google Map Display -->
+      <div id="map">
+          <iframe id="mapIframe" width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
+      </div>
+
+
+      <!-- ChatGPT Options Section -->
+      <div id="chatOptions">
+          <label>Select an option to ask about your destination:</label>
+          <button onclick="handleChatOption('events')">What events are in the destination city?</button>
+          <button onclick="handleChatOption('cost_week')">What will a week cost in the destination city?</button>
+          <button onclick="handleChatOption('drive_cost')">How much will it cost to drive or fly to the destination city?</button>
+      </div>
+
+
+      <div id="response">
+          Your response will appear here.
+      </div>
+
+
+      <!-- Events List Section -->
+      <div id="eventList">
+          <h2>Events in the Destination City:</h2>
+      </div>
+
+
+      <!-- Save Trip Button -->
+      <button id="saveTripButton" style="margin-top: 20px;">Save This Trip</button>
+
+
+      <!-- Saved Events List Section -->
+      <div id="savedEventsList">
+          <h2>Saved Events for This Trip:</h2>
+      </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+
+</html>
+
+
+
